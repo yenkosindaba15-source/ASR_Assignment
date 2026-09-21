@@ -26,16 +26,16 @@ while robot.step(TIME_STEP) != -1:
     values = [sensor.getValue() for sensor in sensors]
 
     obstacle_detected = (
-        values[0] > 500 or
-        values[1] > 500 or
-        values[6] > 500 or
-        values[7] > 500
+        values[0] > 80 or
+        values[1] > 80 or
+        values[6] > 80 or
+        values[7] > 80
     )
 
     if obstacle_detected:
-        print("WALL DETECTED")
-        left_motor.setVelocity(0)
-        right_motor.setVelocity(0)
+        print("TURNING LEFT")
+        left_motor.setVelocity(-2.0)
+        right_motor.setVelocity(2.0)
     else:
         print("MOVING FORWARD")
         left_motor.setVelocity(3.0)
