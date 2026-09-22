@@ -7,9 +7,13 @@ TIME_STEP = 64
 camera = robot.getDevice("camera")
 camera.enable(TIME_STEP)
 
+count = 0
+
 while robot.step(TIME_STEP) != -1:
+    image = camera.getImage()
 
-    width = camera.getWidth()
-    height = camera.getHeight()
+    if image is not None:
+        count += 1
 
-    print(f"Camera Active: {width} x {height}")
+        if count % 50 == 0:
+            print("Image Captured Successfully.")
