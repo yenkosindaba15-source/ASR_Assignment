@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 
 grid = np.zeros((10, 10))
 
@@ -14,5 +15,11 @@ plt.imshow(grid, cmap='gray_r')
 plt.title("Occupancy Grid Map")
 plt.xlabel("X Position")
 plt.ylabel("Y Position")
-plt.colorbar(label = "Obstacle")
+
+#Key
+legend_elements = [
+    Patch(facecolor='white', edgecolor='black', label='Free Space'),
+    Patch(facecolor='black', edgecolor='black', label='Obstacle')
+]
+plt.legend(handles = legend_elements, loc = 'upper right')
 plt.show()
