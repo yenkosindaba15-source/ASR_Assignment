@@ -25,17 +25,28 @@ for name in sensor_names:
 while robot.step(TIME_STEP) != -1:
     values = [sensor.getValue() for sensor in sensors]
 
-    obstacle_detected = (
+    front_obstacle = (
         values[0] > 80 or
         values[1] > 80 or
         values[6] > 80 or
         values[7] > 80
     )
 
-    if obstacle_detected:
-        print("TURNING LEFT")
-        left_motor.setVelocity(-2.0)
-        right_motor.setVelocity(2.0)
+    left_side = values[5]
+    right_side = values[2]
+
+    # Robot makes turning decisions.
+    if front_obstacle:
+        if left_side < right_side:
+            print("TURNING LEFT")
+
+            left_motor.setVelocity(-2.0)
+            right_motor.setVelocity(2.0)
+        else:
+            print("TURNING RIGHT")
+
+            left_motor.setVelocity(2.0)
+            right_motor.setVelocity(-2.0)
     else:
         print("MOVING FORWARD")
         left_motor.setVelocity(3.0)
