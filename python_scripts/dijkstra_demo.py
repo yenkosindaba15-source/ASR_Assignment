@@ -66,6 +66,7 @@ def dijkstra(grid, start, goal):
     return path
 
 path = dijkstra(grid, start, goal)
+print("Path Length: ", len(path))
 
 for x, y in path:
     grid[x][y] = 2
