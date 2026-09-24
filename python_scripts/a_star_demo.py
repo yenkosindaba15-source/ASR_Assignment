@@ -66,11 +66,12 @@ def a_star(grid, start, goal):
     return path
 
 path = a_star(grid, start, goal)
+print("Path Length: ", len(path))
 
 for x, y in path:
     grid[x][y] = 2
 
-custom_map = ListedColormap(["White", "Black", "Green"])
+custom_map = ListedColormap(["White", "Black", "Limegreen"])
 plt.imshow(grid, cmap=custom_map)
 
 legend_elements = [
