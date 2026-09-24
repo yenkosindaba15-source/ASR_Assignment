@@ -5,8 +5,6 @@ from matplotlib.patches import Patch
 from matplotlib.colors import ListedColormap
 import time
 
-from python_scripts.occupancy_grid import legend_elements
-
 grid = np.zeros((10, 10))
 
 # Obstacles
@@ -31,8 +29,10 @@ def dijkstra(grid, start, goal):
 
     distances = {start: 0}
     previous = {}
+    nodes_explored = 0
 
     while queue:
+        nodes_explored += 1
         current_distance, current_node = heapq.heappop(queue)
 
         if current_node == goal:
@@ -64,14 +64,15 @@ def dijkstra(grid, start, goal):
     path.append(start)
     path.reverse()
 
-    return path
+    return path, nodes_explored
 
 start_time = time.perf_counter()
-path = dijkstra(grid, start, goal)
+path, nodes_explored = dijkstra(grid, start, goal)
 end_time = time.perf_counter()
 runtime = end_time - start_time
 
 print("Path Length:", len(path))
+print("Nodes Explored: ", nodes_explored) #97
 print("Runtime:", runtime)
 
 for x, y in path:

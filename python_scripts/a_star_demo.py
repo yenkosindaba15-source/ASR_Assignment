@@ -30,8 +30,10 @@ def a_star(grid, start, goal):
 
     cost_so_far = {start: 0}
     parent_nodes = {}
+    nodes_explored = 0
 
     while open_nodes:
+        nodes_explored += 1
         _, current = heapq.heappop(open_nodes)
 
         if current == goal:
@@ -64,14 +66,15 @@ def a_star(grid, start, goal):
     path.append(start)
     path.reverse()
 
-    return path
+    return path, nodes_explored
 
 start_time = time.perf_counter()
-path = a_star(grid, start, goal)
+path, nodes_explored = a_star(grid, start, goal)
 end_time = time.perf_counter()
 runtime = end_time - start_time
 
 print("Path Length:", len(path))
+print("Nodes Explored: ", nodes_explored) #96
 print("Runtime:", runtime)
 
 for x, y in path:
