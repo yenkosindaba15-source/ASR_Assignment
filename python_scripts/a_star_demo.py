@@ -3,6 +3,7 @@ import heapq
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 from matplotlib.colors import ListedColormap
+import time
 
 grid = np.zeros((10, 10))
 
@@ -65,8 +66,13 @@ def a_star(grid, start, goal):
 
     return path
 
+start_time = time.perf_counter()
 path = a_star(grid, start, goal)
-print("Path Length: ", len(path))
+end_time = time.perf_counter()
+runtime = end_time - start_time
+
+print("Path Length:", len(path))
+print("Runtime:", runtime)
 
 for x, y in path:
     grid[x][y] = 2
