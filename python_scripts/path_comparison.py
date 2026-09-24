@@ -7,7 +7,7 @@ algorithms = ["Dijkstra", "A*"]
 path_lengths = [dijkstra_length, a_star_length]
 
 plt.title("Path Length Comparison")
-plt.bar(algorithms, path_lengths)
+plt.bar(algorithms, path_lengths, color="green", width=0.3)
 plt.xlabel("Algorithms")
 plt.ylabel("Number of Nodes")
 

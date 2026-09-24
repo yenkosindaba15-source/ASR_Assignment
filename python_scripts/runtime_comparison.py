@@ -5,7 +5,7 @@ runtimes = [0.0014338999753817916, 0.0009506999631412327]
 
 
 plt.title("Runtime Comparison")
-plt.bar(algorithms, runtimes, color="green")
+plt.bar(algorithms, runtimes, color="green", width=0.3)
 plt.xlabel("Algorithms")
 plt.ylabel("Execution Time (seconds)")
 
