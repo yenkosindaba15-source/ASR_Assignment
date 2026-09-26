@@ -79,7 +79,7 @@ for x, y in path:
     grid[x][y] = 2
 
 #Matplotlib
-plt.title("Dijkstra Path")
+plt.title("Dijkstra Shortest Path Navigation")
 
 custom_map = ListedColormap(["White", "Black", "Green"])
 plt.imshow(grid, cmap=custom_map)
@@ -91,7 +91,7 @@ legend_elements = [
 ]
 plt.legend(handles=legend_elements, loc='upper right')
 
-plt.xlabel('X Position')
-plt.ylabel('Y Position')
+plt.xlabel('Horizontal Grid Position')
+plt.ylabel('Vertical Grid Position')
 
 plt.show()

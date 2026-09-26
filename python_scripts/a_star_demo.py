@@ -91,8 +91,8 @@ legend_elements = [
 
 plt.legend(handles=legend_elements)
 
-plt.title("A* Path")
-plt.xlabel("X Position")
-plt.ylabel("Y Position")
+plt.title("A* Shortest Path Navigation")
+plt.xlabel("Horizontal Grid Position")
+plt.ylabel("Vertical Grid Position")
 
 plt.show()

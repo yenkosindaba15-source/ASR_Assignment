@@ -19,9 +19,9 @@ if fused_obstacle:
 
 plt.imshow(grid, cmap="gray_r")
 
-plt.title("Sensor Fusion Obstacle Map")
-plt.xlabel("X Position")
-plt.ylabel("Y Position")
+plt.title("Fused Environment Obstacle Map")
+plt.xlabel("Horizontal Grid Position")
+plt.ylabel("Vertical Grid Position")
 
 legend_elements = [
     Patch(facecolor='white', edgecolor='black', label='Free Space'),

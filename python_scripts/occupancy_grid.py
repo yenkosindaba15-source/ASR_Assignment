@@ -12,9 +12,9 @@ grid[7][8] = 1
 grid[6][8] = 1
 
 plt.imshow(grid, cmap='gray_r')
-plt.title("Occupancy Grid Map")
-plt.xlabel("X Position")
-plt.ylabel("Y Position")
+plt.title("Occupancy Grid Environment Map")
+plt.xlabel("Horizontal Grid Position")
+plt.ylabel("Vertical Grid Position")
 
 #Key
 legend_elements = [
