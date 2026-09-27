@@ -1,0 +1,48 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6090349082267369 0.5954832689601108 0.5239047212517086 2.194802523358386
+  position -0.010830200311696223 0.5083302056737943 3.3875584262858554
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+E-puck {
+  hidden position_0_0 2367.6341718422727
+  hidden position_0_1 2718.524066859636
+  hidden rotation_1 0 1 0 5.15649634274822
+  hidden rotation_2 0 0.9999999999999999 0 4.188014158054792
+  translation -0.15 0 0
+  rotation -0.0013129250888731846 -0.000672691781600642 0.9999989118561468 -2.1962830516445946
+  name "worker1"
+  controller "path_follower"
+}
+E-puck {
+  hidden position_0_0 2367.6341718422727
+  hidden position_0_1 2718.524066859636
+  hidden rotation_1 0 1 0 5.15649634274822
+  hidden rotation_2 0 0.9999999999999999 0 4.188014158054792
+  translation 0.15 0 0
+  rotation -0.0013129250888731846 -0.000672691781600642 0.9999989118561468 -2.1962830516445946
+  name "worker2"
+  controller "path_follower"
+}
+E-puck {
+  hidden position_0_0 2367.6341718422727
+  hidden position_0_1 2718.524066859636
+  hidden rotation_1 0 1 0 5.15649634274822
+  hidden rotation_2 0 0.9999999999999999 0 4.188014158054792
+  rotation -0.0013129250888731846 -0.000672691781600642 0.9999989118561468 -2.1962830516445946
+  name "leader"
+  controller "path_follower"
+}
