@@ -27,5 +27,8 @@ while robot.step(TIME_STEP) != -1:
         if message == "MOVE_FORWARD":
             left_motor.setVelocity(3.0)
             right_motor.setVelocity(3.0)
+        elif message == "TURN_LEFT":
+            left_motor.setVelocity(-1.5)
+            right_motor.setVelocity(1.5)
 
         receiver.nextPacket()
