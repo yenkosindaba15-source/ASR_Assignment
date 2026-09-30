@@ -23,10 +23,18 @@ predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 print(f"Accuracy: {accuracy:.4f}")
 
-#Matrix:
+#Confusion Matrix:
 matrix = confusion_matrix(y_test, predictions)
 display = ConfusionMatrixDisplay(confusion_matrix=matrix, display_labels=model.classes_)
 display.plot(cmap="Blues")
 
 plt.title("Navigation Decision Confusion Matrix")
+plt.show()
+
+#Performance Curve:
+plt.title("Neural Network Training Loss")
+plt.plot(model.loss_curve_, linewidth=2)
+plt.xlabel("Training Iteration")
+plt.ylabel("Loss")
+plt.grid(True)
 plt.show()
